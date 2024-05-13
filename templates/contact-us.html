@@ -6,7 +6,6 @@
 
 {% block content %}
 
-    {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
-
+    {% include "contact-form.html" %}
 
 {% endblock %}

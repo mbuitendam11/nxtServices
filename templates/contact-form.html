@@ -1,0 +1,18 @@
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block content %}
+
+    <div class="container shadow p-3 mb-5 bg-body-white rounded mt-5">
+        <div class="row mb-3">
+            <div class="pb-3">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="row">
+                <div>
+                    {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                </div>
+            </div>
+        </div>
+    </div> 
+
+{% endblock %}
