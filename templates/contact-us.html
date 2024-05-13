@@ -1,18 +1,12 @@
+{% from "bootstrap5/form.html" import render_form %}
+
 {% extends "base.html" %}
 
 {% block title %}Contact Us{% endblock %}
 
 {% block content %}
 
-<form action="", method="post">
+    {{render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
 
-    <p>First Name</p> <input type="text" name="firstname">
-    <p>Last Name</p> <input type="text" name="lastname">
-    <p>Email</p> <input type="text" name="email">
-    <p>Subject</p> <input type="text" name="subject">
-    <p>description</p> <input type="text" name="desc">
-    <button>Send Email</button>
-
-</form>
 
 {% endblock %}

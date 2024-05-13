@@ -5,6 +5,7 @@ import os, smtplib
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "os.environ.get('FLASK_KEY')"
 Bootstrap5(app)
 
 @app.route("/", methods=["GET", "POST"])
@@ -26,20 +27,12 @@ def aboutUs():
 @app.route("/contact-us", methods=["GET", "POST"])
 def contactUs():
     form = ContactUs()
-    
+    ## Need to work on this section, currently a built form and then html form is not set up for WTForms
     if form.validate_on_submit():
-        pass
-
-    return render_template("contact-us.html", form=form)
-
-"""@app.route("/success", methods=["POST"])
-def success():
-    if form.validate:
-        firstname = request.form["firstname"]
-        lastname = request.form['lastname']
-        email = request.form["email"]
-        subject = request.form["subject"]
-        desc = request.form["desc"]
+        name = form.name.data,
+        email = form.email.data,
+        subject = form.subject.data,
+        desc = form.desc.data,
 
         my_email = ""
         password = ""
@@ -49,11 +42,19 @@ def success():
             connection.login(user=my_email, password=password)
             connection.sendmail(
                 from_addr=my_email, 
-                to_addrs=[f"{email}"],
-                msg=f"Subject:{subject}\n\n{desc}\nKind regards,\n{firstname}{lastname}"
+                to_addrs=[f"{my_email}"],
+                msg=f"Subject:{subject[0]}\n\n{desc[0]}\nEmail:{email[0]}Kind regards,\n{name[0]}"
             )
-        return f"Success! Review your email below \n\n Hi {firstname} {lastname}, <br> just confirming your email is {email} and heading {subject} <br> {desc}"
-    return redirect(url_for("contactUs"))"""
+            connection.sendmail(
+                from_addr=my_email, 
+                to_addrs=[f"{email[0]}"],
+                msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
+            )
+
+        return f"Success! Review your email below \n\n Hi {name[0]}, <br> just confirming your email is {email[0]} and heading {subject[0]} <br> {desc[0]}"
+
+    return render_template("contact-us.html", form=form)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
