@@ -27,7 +27,7 @@ def aboutUs():
 @app.route("/contact-us", methods=["GET", "POST"])
 def contactUs():
     form = ContactUs()
-    ## Need to work on this section, currently a built form and then html form is not set up for WTForms
+    
     if form.validate_on_submit():
         name = form.name.data,
         email = form.email.data,

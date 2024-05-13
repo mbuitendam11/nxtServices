@@ -8,9 +8,27 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css')  }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')  }}">
+        
     </head>
     <body>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4">Logo Image goes here</span>
+              </a>
+        
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{{  url_for('index')  }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{  url_for('personal')  }}" class="nav-link">Personal Tax</a></li>
+                <li class="nav-item"><a href="{{  url_for('business')  }}" class="nav-link">Business Tax</a></li>
+                <li class="nav-item"><a href="{{  url_for('aboutUs')  }}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{  url_for('contactUs')  }}" class="nav-link">Contact Us</a></li>
+              </ul>
+            </header>
+          </div>
+
         <!-- Navbar needs to go into here -->
 
         {% block content %} {% endblock %}
