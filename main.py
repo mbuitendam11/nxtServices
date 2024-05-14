@@ -41,92 +41,14 @@ def index():
 
 @app.route("/peronsal-tax")
 def personal():
-    form = ContactUs()
-        
-    if form.validate_on_submit():
-        name = form.name.data,
-        email = form.email.data,
-        subject = form.subject.data,
-        desc = form.desc.data,
-
-        my_email = ""
-        password = ""
-
-        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-            connection.starttls()
-            connection.login(user=my_email, password=password)
-            connection.sendmail(
-                from_addr=my_email, 
-                to_addrs=[f"{my_email}"],
-                msg=f"Subject:{subject[0]}\n\n{desc[0]}\nEmail:{email[0]}Kind regards,\n{name[0]}"
-            )
-            connection.sendmail(
-                from_addr=my_email, 
-                to_addrs=[f"{email[0]}"],
-                msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
-            )
-
-        return f"Success! Review your email below \n\n Hi {name[0]}, <br> just confirming your email is {email[0]} and heading {subject[0]} <br> {desc[0]}"
     return render_template("personal-tax.html")
 
 @app.route("/business-tax")
 def business():
-    form = ContactUs()
-        
-    if form.validate_on_submit():
-        name = form.name.data,
-        email = form.email.data,
-        subject = form.subject.data,
-        desc = form.desc.data,
-
-        my_email = ""
-        password = ""
-
-        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-            connection.starttls()
-            connection.login(user=my_email, password=password)
-            connection.sendmail(
-                from_addr=my_email, 
-                to_addrs=[f"{my_email}"],
-                msg=f"Subject:{subject[0]}\n\n{desc[0]}\nEmail:{email[0]}Kind regards,\n{name[0]}"
-            )
-            connection.sendmail(
-                from_addr=my_email, 
-                to_addrs=[f"{email[0]}"],
-                msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
-            )
-
-        return f"Success! Review your email below \n\n Hi {name[0]}, <br> just confirming your email is {email[0]} and heading {subject[0]} <br> {desc[0]}"
     return render_template("business-tax.html")
 
 @app.route("/about-us")
 def aboutUs():
-    form = ContactUs()
-        
-    if form.validate_on_submit():
-        name = form.name.data,
-        email = form.email.data,
-        subject = form.subject.data,
-        desc = form.desc.data,
-
-        my_email = ""
-        password = ""
-
-        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-            connection.starttls()
-            connection.login(user=my_email, password=password)
-            connection.sendmail(
-                from_addr=my_email, 
-                to_addrs=[f"{my_email}"],
-                msg=f"Subject:{subject[0]}\n\n{desc[0]}\nEmail:{email[0]}Kind regards,\n{name[0]}"
-            )
-            connection.sendmail(
-                from_addr=my_email, 
-                to_addrs=[f"{email[0]}"],
-                msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
-            )
-
-        return f"Success! Review your email below \n\n Hi {name[0]}, <br> just confirming your email is {email[0]} and heading {subject[0]} <br> {desc[0]}"
     return render_template("about-us.html")
 
 @app.route("/contact-us", methods=["GET", "POST"])
