@@ -5,7 +5,7 @@ import os, smtplib
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "os.environ.get('FLASK_KEY')"
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
 @app.route("/", methods=["GET", "POST"])
@@ -61,8 +61,8 @@ def contactUs():
         subject = form.subject.data,
         desc = form.desc.data,
 
-        my_email = ""
-        password = ""
+        my_email = os.environ.get('email')
+        password = os.environ.get('Password')
 
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
