@@ -12,32 +12,32 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img src="static\img\personalTax.png" alt="Personal Tax">
         <div class="container">
           <div class="carousel-caption text-start">
             <h1>Fix up your Personal Tax</h1>
             <p class="opacity-75">Starting at $100 per tax return, we can make it easy for you!</p>
-            <p><a class="btn btn-lg btn-primary" href="{{  url_for('personal')  }}">Learn More</a></p>
+            <p><a class="btn btn-lg btn-success" href="{{  url_for('personal')  }}">Learn More</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img src="static\img\businessTax.png" alt="Business Tax">
         <div class="container">
           <div class="carousel-caption">
             <h1>Business Tax confusing?</h1>
             <p>Not only can we deal with your personal tax, we can make sure your business tax is just as easy.</p>
-            <p><a class="btn btn-lg btn-primary" href="{{  url_for('business')  }}">Learn more</a></p>
+            <p><a class="btn btn-lg btn-success" href="{{  url_for('business')  }}">Learn more</a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <img src="static\img\shakingHands.png" alt="Contact Us">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>Already heard enough?</h1>
             <p>Want to talk to us, click the button below and we can get started.</p>
-            <p><a class="btn btn-lg btn-primary" href="{{  url_for('contactUs')  }}">Contact Us</a></p>
+            <p><a class="btn btn-lg btn-success" href="{{  url_for('contactUs')  }}">Contact Us</a></p>
           </div>
         </div>
       </div>
@@ -56,11 +56,11 @@
 
     <!-- Three columns of text below the carousel -->
     <div class="row">
-      <h2 class="featurette-heading">A nice big heading to captivate the audience</h2>
-      <h3 class="text-body-secondary">A really nice 1-2 sentences around the nice big heading</h3>
-      <p class="lead">
-        Some representative placeholder content for the three columns of text below the carousel. This is the first column.
-      </p>
+      <h2 class="featurette-heading">Let us deal with the BS!</h2>
+      <h3 class="text-body-secondary">(business services)</h3>
+      <p class="lead">100% owned and operated in Australia specialising in accounting and tax</p>
+      <p>Have more time to get to you know us?</p>
+      <a href="{{  url_for('aboutUs')  }}"><button class="btn btn-lg btn-success">About Us</button></a>
     </div><!-- /.row -->
 
       <!-- START THE FEATURETTES -->
@@ -68,12 +68,15 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-          <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <div class="col-md-7 px-3">
+          <h2 class="featurette-heading fw-normal lh-1">Fully Remote!</h2>
+          <p class="lead">100% remote to make costs cheaper for you, and allow us to service more of you!</p>
+          <p class="lead">Check out how we do it!</p>
+          <a href="{{  url_for('personal')  }}" class="mx-3"><button class="btn btn-lg btn-success">Personal Tax</button></a>
+          <a href="{{  url_for('business')  }}" class="mx-3"><button class="btn btn-lg btn-success">Business Tax</button></a>
         </div>
         <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+          <img src="static\img\aus.png" class="rounded-4 shadow" width="100%" height="100%">
         </div>
       </div>
   
@@ -95,7 +98,5 @@
     </div><!-- /.container -->
 
     {% include "contact-form.html" %}
-
-<!-- Look at including contact page rather than copy and pasting each page -->
 
 {% endblock %}

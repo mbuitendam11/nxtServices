@@ -74,3 +74,28 @@
   .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
   }
+
+  .btn-light {
+    background-color: #fff;
+    border: none;
+  }
+
+  .btn-light:hover {
+    background-color: #84c441;
+    color: #fff;
+  }
+
+  .btn-success {
+    background-color: #84c441;
+    border: none;
+  }
+
+  @media screen and (max-width: 425px) {
+    .header-img {
+      left: 1000px;
+    }
+
+    #img-container {
+      position: relative;
+    }
+  }
