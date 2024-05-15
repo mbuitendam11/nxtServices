@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, request
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap5
 from forms import ContactUs
 import os, smtplib
@@ -18,8 +18,8 @@ def index():
         subject = form.subject.data,
         desc = form.desc.data,
 
-        my_email = ""
-        password = ""
+        my_email = os.environ.get('email')
+        password = os.environ.get('Password')
 
         with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
             connection.starttls()
@@ -35,7 +35,8 @@ def index():
                 msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
             )
 
-        return f"Success! Review your email below \n\n Hi {name[0]}, <br> just confirming your email is {email[0]} and heading {subject[0]} <br> {desc[0]}"
+        
+        return redirect(url_for('index'))
     
     return render_template("index.html", form=form)
 
@@ -78,9 +79,9 @@ def contactUs():
                 msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
             )
 
-        return f"Success! Review your email below \n\n Hi {name[0]}, <br> just confirming your email is {email[0]} and heading {subject[0]} <br> {desc[0]}"
+        return redirect(url_for('index'))
 
     return render_template("contact-us.html", form=form)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
