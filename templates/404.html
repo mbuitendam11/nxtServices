@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Still under construction{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="static\img\logo-icon.png">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css')  }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')  }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}">
+        
+    </head>
+<body class="background">
+        <div class="card-parent shadow-lg p-5 bg-body-tertiary rounded-5">
+            <div class="row">
+                <h2 class="fw-bold d-flex justify-content-center">Looks like you have beat us to it!</h2>
+                <p class="lead">This part of the website is still under construction.</p>
+                <a href="{{  url_for('index')  }}"><button class="btn btn-success">Return to safety</button></a>
+            </div>
+        </div>
+
+    <script src="{{  url_for('static', filename='js/bootstrap.min.js')  }}"></script>
+    <script src="{{  url_for('static', filename='js/js.js')  }}"></script>
+</body>
+</html>

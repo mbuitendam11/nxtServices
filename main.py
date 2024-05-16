@@ -40,7 +40,7 @@ def index():
     
     return render_template("index.html", form=form)
 
-@app.route("/peronsal-tax")
+@app.route("/personal-tax")
 def personal():
     return render_template("personal-tax.html")
 
@@ -71,17 +71,21 @@ def contactUs():
             connection.sendmail(
                 from_addr=my_email, 
                 to_addrs=[f"{my_email}"],
-                msg=f"Subject:{subject[0]}\n\n{desc[0]}\nEmail:{email[0]}Kind regards,\n{name[0]}"
+                msg=f"Subject:{subject[0]}\n\n{desc[0]}\n\nEmail:{email[0]}Name:\n\n{name[0]}"
             )
             connection.sendmail(
                 from_addr=my_email, 
                 to_addrs=[f"{email[0]}"],
-                msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps."
+                msg=f"Subject:Thanks for enquiring!\n\nThanks for enquiring with Nxt Services. A rep will be in touch about next steps.\n\nKind regards,\nNxt Team"
             )
 
         return redirect(url_for('index'))
 
     return render_template("contact-us.html", form=form)
+
+@app.route("/Whoops")
+def building():
+    return render_template("404.html")
 
 if __name__ == "__main__":
     app.run(debug=False)
