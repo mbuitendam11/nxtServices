@@ -5,7 +5,7 @@ import os, smtplib
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "os.environ.get('FLASK_KEY')"
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
 @app.route("/", methods=["GET", "POST"])
@@ -116,4 +116,4 @@ def building():
     return render_template("404.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
