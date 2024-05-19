@@ -34,14 +34,13 @@
                 <div class="dropdown">
                   <button onclick="busServices()" class="dropbtn btn btn-light dropdown-toggle">Business Services</button>
                   <div id="myDropdown1" class="dropdown-content rounded-4">
-                    <a href="{{  url_for('building')  }}" class="rounded-4">Web Development</a>
-                    <a href="{{  url_for('building')  }}" class="rounded-4">IT Consulting</a>
-                    <a href="{{  url_for('building')  }}" class="rounded-4">IT Procurement</a>
-                    <a href="{{  url_for('building')  }}" class="rounded-4">Graphic Design</a>
-                    <a href="{{  url_for('building')  }}" class="rounded-4">Social Media Marketing</a>
-                    <a href="{{  url_for('building')  }}" class="rounded-4">Signage & Print Media</a>
+                    <a href="{{  url_for('webDev')  }}" class="rounded-4">Web Development</a>
+                    <a href="{{  url_for('consulting')  }}" class="rounded-4">IT Consulting</a>
+                    <a href="{{  url_for('procurement')  }}" class="rounded-4">IT Procurement</a>
+                    <a href="{{  url_for('socialMedia')  }}" class="rounded-4">Social Media Marketing</a>
                   </div>
                 </div>
+                <li class="nav-item"><a href="{{  url_for('building')  }}" class="btn btn-light">Complete Package</a></li>
                 <li class="nav-item"><a href="{{  url_for('aboutUs')  }}" class="btn btn-light">About</a></li>
                 <li class="nav-item"><a href="{{  url_for('contactUs')  }}" class="btn btn-light">Contact Us</a></li>
               </ul>

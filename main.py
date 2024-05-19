@@ -5,7 +5,7 @@ import os, smtplib
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
+app.config['SECRET_KEY'] = "os.environ.get('FLASK_KEY')"
 Bootstrap5(app)
 
 @app.route("/", methods=["GET", "POST"])
@@ -52,9 +52,17 @@ def business():
 def accounting():
     return render_template("accounting.html")
 
+@app.route("/web-development")
+def webDev():
+    return render_template("webDev.html")
+
 @app.route("/it-consulting")
 def consulting():
     return render_template("consulting.html")
+
+@app.route("/it-procurement")
+def procurement():
+    return render_template("procurement.html")
 
 @app.route("/graphic-design")
 def graphics():
@@ -108,4 +116,4 @@ def building():
     return render_template("404.html")
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
